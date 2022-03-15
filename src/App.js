@@ -13,28 +13,50 @@ function App() {
   const [tasks, setTasks] = useState([])
 
   useEffect(() => {
-    if(!localStorage.getItem('data')){
-      console.log('localstorage is empty')
+    if (localStorage.getItem('tasks')) {
+      setTasks(JSON.parse(localStorage.getItem('tasks')))
     }
-    else{
-      setTasks(JSON.parse(localStorage.getItem('data')))
-      
+    else {
+      // localStorage.setItem('tasks', JSON.stringify(
+      //   [
+      //     {
+      //       "id": 1,
+      //       "text": "something on day 1",
+      //       "day": "20-09-22",
+      //       "reminder": false
+      //     },
+      //     {
+      //       "id": 3,
+      //       "text": "something on day 3",
+      //       "day": "22-09-22",
+      //       "reminder": true
+      //     },
+      //     {
+      //       "text": "Call Mom",
+      //       "day": "Today at 6pm",
+      //       "reminder": false,
+      //       "id": 4
+      //     }
+      //   ]
+      // ))
+      // setTasks(JSON.parse(localStorage.getItem('tasks')))
     }
-    const getTasks = async () => {
-      const taskFromServer = await fetchTasks()
-      setTasks(taskFromServer)
-    }
-    getTasks()
+    // const getTasks = async () => {
+    //   const taskFromServer = await fetchTasks()
+    //   setTasks(taskFromServer)
+    // }
+    // getTasks()
   }, [])
 
   // fetching tasks from db
-  const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
-    const data = await res.json()
-    return data
-  }
+  // const fetchTasks = async () => {
+  //   const res = await fetch('http://localhost:5000/tasks')
+  //   const data = await res.json()
+  //   return data
+  // }
 
   // fetching task from db
+  
   const fetchTask = async (id) => {
     const res = await fetch(`http://localhost:5000/tasks/${id}`)
     const data = await res.json()
