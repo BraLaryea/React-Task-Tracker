@@ -1,6 +1,6 @@
 # About project
-A simple Task Tracking application built on React Js with a pseudo json server
-
+A simple Task Tracking application built on React Js with a pseudo json server.
+Data on Json Server
 
 # Getting Started with Create React App
 
