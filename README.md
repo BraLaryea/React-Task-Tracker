@@ -1,3 +1,7 @@
+# About project
+A simple Task Tracking application built on React Js with a pseudo json server and LocalStorage.
+There are two branches with two variatios of data source: Json Server and localstorage
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
