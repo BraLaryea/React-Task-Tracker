@@ -13,12 +13,17 @@ function App() {
   const [tasks, setTasks] = useState([])
 
   useEffect(() => {
+    if(!localStorage.getItem('data')){
+      console.log('localstorage is empty')
+    }
+    else{
+      setTasks(JSON.parse(localStorage.getItem('data')))
+      
+    }
     const getTasks = async () => {
       const taskFromServer = await fetchTasks()
       setTasks(taskFromServer)
     }
-    fetchTasks()
-
     getTasks()
   }, [])
 
