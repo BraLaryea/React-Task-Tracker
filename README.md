@@ -1,3 +1,6 @@
+A simple Task Tracking application built on React Js with a pseudo json server
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
