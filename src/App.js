@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('tasks')) {
-      setTasks(JSON.parse(localStorage.getItem('tasks')))
+      fetchTasks()
     }
     else {
       // localStorage.setItem('tasks', JSON.stringify(
@@ -49,17 +49,13 @@ function App() {
   }, [])
 
   // fetching tasks from db
-  // const fetchTasks = async () => {
-  //   const res = await fetch('http://localhost:5000/tasks')
-  //   const data = await res.json()
-  //   return data
-  // }
+  const fetchTasks = () => {
+    setTasks(JSON.parse(localStorage.getItem('tasks')))
+  }
 
   // fetching task from db
-  
-  const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
-    const data = await res.json()
+  const fetchTask = (id) => {
+    const data = tasks.find((task) => task.id === id)
     return data
   }
 
