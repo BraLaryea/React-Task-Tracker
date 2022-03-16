@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams, useNavigate, useLocation } from "react-router-dom"
 import Button from "./Button"
 
-const TaskDetais = () => {  
+const TaskDetais = () => {
 
     const [loading, setLoading] = useState(true)
     const [task, setTask] = useState({})
